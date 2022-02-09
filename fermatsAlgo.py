@@ -19,7 +19,7 @@ if __name__ in '__main__':
     correct = 0
     incorrect = 0
     ran = int(input("Enter the number of tests: "))
-    primes = list(sympy.primerange(2, ran)) # Generate a list of primes 
+    primes = set(sympy.primerange(2, ran)) # Generate a list of primes 
 
     # The range we want to test numbers n up to
     for x in range(3, ran + 1):
