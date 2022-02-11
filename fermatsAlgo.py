@@ -24,6 +24,7 @@ if __name__ in '__main__':
     # The range we want to test numbers n up to
     for x in range(3, ran + 1):
         base = random.randint(2, x - 1) # Generate a random number as the base
+        # if pow(base, x-1, mod=x) == 1:
         if power(base, x - 1, x) == 1: # Fast powering algorithm
             if x in primes: # Reference against our list of primes
                 correct += 1
