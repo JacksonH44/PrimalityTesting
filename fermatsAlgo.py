@@ -1,4 +1,5 @@
 import random
+from re import A
 import sympy
 
 # Python representation of the fast powering algorithm in mod m
@@ -15,22 +16,27 @@ def power(a, n, m):
     x = (x*x)%m
     return (x*a)%m if (n%2)==1 else x
 
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def fermatWitness(a, n):
+    return not pow(a, n-1, mod=n) == 1
+
+def fermat(n):
+    i = 0
+    while i < 10:
+        a = random.randint(2, n-1)
+        if gcd(n, a) == 1: # Relatively prime
+            if fermatWitness(a, n):
+                return False
+            i += 1
+    return True
+
+
 if __name__ in '__main__':
-    correct = 0
-    incorrect = 0
-    ran = int(input("Enter the number of tests: "))
-    primes = set(sympy.primerange(2, ran)) # Generate a list of primes 
 
-    # The range we want to test numbers n up to
-    for x in range(3, ran + 1):
-        base = random.randint(2, x - 1) # Generate a random number as the base
-        # if pow(base, x-1, mod=x) == 1:
-        if power(base, x - 1, x) == 1: # Fast powering algorithm
-            if x in primes: # Reference against our list of primes
-                correct += 1
-            else: # Pseudoprime
-                incorrect += 1
-        else:
-            correct += 1 # Fermat's little theorem is always correct for non primes
+    x = int(input())
+    print('prime') if fermat(x) else print('not prime')
 
-    print("The accuracy of one Fermat test is {:.2f}%".format(correct/(correct + incorrect) * 100))
