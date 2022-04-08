@@ -9,3 +9,6 @@ Fermat's Little Theorem is a famous number theory result that says for any integ
 
 # Sieve of Eratosthenes
 The Sieve of Eratosthenes is interesting aside from the fact that it is hard to pronounce. The Sieve dates back to early Greece and is used to compute all the prime numbers up to a certain range. It looks through a list of 2, ..., sqrt(n) numbers and marks all multiples of each as composite. The leftover numbers are all prime.
+
+# Miller-Rabin Test
+The Miller-Rabin test is the gold standard for primality testing in cryptography. Based on the fact that the square root of a number over a prime finite field has no non-trivial square roots equivalent to 1, it has a probability of correctness of 3/4. 
