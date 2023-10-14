@@ -1,6 +1,10 @@
 # Introduction
 In the winter semester of 2022 at Western University, I was a member of the [Directed Reading Program](https://www.math.uwo.ca/undergraduate/current_students/directed_reading_program.html). My presentation topic was on Primality Testing and implementing these algorithms in Python. This work was presented on April 2, 2022 at the Western Undergraduate Reading Program Seminar.
 
+# Requirements
+* [Python3.6+](https://www.python.org/downloads/)
+* [SymPy](https://www.sympy.org/en/index.html)
+
 # Setup Instructions
 Clone the respository and run ```py -m pip install sympy``` (for Windows)
 
